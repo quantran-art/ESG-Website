@@ -1,0 +1,871 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Added meta tag to prevent automatic CSS injection -->
+    <meta name="v0-disable-auto-css" content="true">
+    <title>Coming Soon - Erasight Consulting Group</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --disable-auto-imports: true;
+            /* Added CSS variables for consistent styling with homepage */
+            --color-primary: #0060A6;
+            --color-secondary: #14B273;
+            --text-primary: #1a202c;
+            --text-secondary: #4a5568;
+            --border: #e2e8f0;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            /* Replaced harsh gradient with subtle dark background and smooth overlay */
+            background: #0f1419;
+            min-height: 100vh;
+            overflow-x: hidden;
+            position: relative;
+        }
+
+        /* Added header and footer styles from homepage */
+        /* Header Styles */
+        .bg-white { background-color: white; }
+        .shadow-soft { box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.06); }
+        .sticky { position: sticky; }
+        .top-0 { top: 0; }
+        .z-50 { z-index: 50; }
+        .max-w-7xl { max-width: 80rem; }
+        .mx-auto { margin-left: auto; margin-right: auto; }
+        .px-4 { padding-left: 1rem; padding-right: 1rem; }
+        .sm\:px-6 { padding-left: 1.5rem; padding-right: 1.5rem; }
+        .lg\:px-8 { padding-left: 2rem; padding-right: 2rem; }
+        .flex { display: flex; }
+        .justify-between { justify-content: space-between; }
+        .items-center { align-items: center; }
+        .h-16 { height: 4rem; }
+        .h-10 { height: 2.5rem; }
+        .w-10 { width: 2.5rem; }
+        .h-8 { height: 2rem; }
+        .w-8 { width: 2rem; }
+        .h-6 { height: 1.5rem; }
+        .w-6 { width: 1.5rem; }
+        .space-x-3 > * + * { margin-left: 0.75rem; }
+        .space-x-8 > * + * { margin-left: 2rem; }
+        .space-x-6 > * + * { margin-left: 1.5rem; }
+        .space-y-1 > * + * { margin-top: 0.25rem; }
+        .space-y-2 > * + * { margin-top: 0.5rem; }
+        .space-y-3 > * + * { margin-top: 0.75rem; }
+        .space-y-4 > * + * { margin-top: 1rem; }
+        .flex-col { flex-direction: column; }
+        .flex-shrink-0 { flex-shrink: 0; }
+        .text-lg { font-size: 1.125rem; }
+        .text-sm { font-size: 0.875rem; }
+        .text-xs { font-size: 0.75rem; }
+        .text-base { font-size: 1rem; }
+        .font-bold { font-weight: 700; }
+        .font-semibold { font-weight: 600; }
+        .text-text-primary { color: var(--text-primary); }
+        .text-text-secondary { color: var(--text-secondary); }
+        .text-primary { color: var(--color-primary); }
+        .text-white { color: white; }
+        .text-gray-300 { color: #d1d5db; }
+        .text-gray-400 { color: #9ca3af; }
+        .text-gray-700 { color: #374151; }
+        .uppercase { text-transform: uppercase; }
+        .tracking-wide { letter-spacing: 0.025em; }
+        .hidden { display: none; }
+        .md\:block { display: block; }
+        .md\:hidden { display: none; }
+        .ml-10 { margin-left: 2.5rem; }
+        .mr-3 { margin-right: 0.75rem; }
+        .mb-4 { margin-bottom: 1rem; }
+        .mt-4 { margin-top: 1rem; }
+        .mt-12 { margin-top: 3rem; }
+        .px-3 { padding-left: 0.75rem; padding-right: 0.75rem; }
+        .py-2 { padding-top: 0.5rem; padding-bottom: 0.5rem; }
+        .py-16 { padding-top: 4rem; padding-bottom: 4rem; }
+        .pt-2 { padding-top: 0.5rem; }
+        .pt-8 { padding-top: 2rem; }
+        .pb-3 { padding-bottom: 0.75rem; }
+        .p-2 { padding: 0.5rem; }
+        .rounded-md { border-radius: 0.375rem; }
+        .rounded-lg { border-radius: 0.5rem; }
+        .border-t { border-top-width: 1px; }
+        .border { border-width: 1px; }
+        .border-border { border-color: var(--border); }
+        .border-gray-700 { border-color: #374151; }
+        .bg-text-primary { background-color: var(--text-primary); }
+        .bg-gray-800 { background-color: #1f2937; }
+        .hover\:text-primary:hover { color: var(--color-primary); }
+        .hover\:text-white:hover { color: white; }
+        .transition-colors { transition-property: color; transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1); transition-duration: 150ms; }
+        .btn-primary { 
+            background: linear-gradient(135deg, var(--color-primary) 0%, var(--color-secondary) 100%);
+            color: white;
+            padding: 0.5rem 1rem;
+            border-radius: 0.375rem;
+            text-decoration: none;
+            font-weight: 500;
+            transition: all 0.3s ease;
+        }
+        .btn-primary:hover {
+            transform: translateY(-1px);
+            box-shadow: 0 4px 12px rgba(0, 96, 166, 0.3);
+        }
+        .block { display: block; }
+        .text-center { text-align: center; }
+        .mx-3 { margin-left: 0.75rem; margin-right: 0.75rem; }
+        .my-2 { margin-top: 0.5rem; margin-bottom: 0.5rem; }
+        .grid { display: grid; }
+        .md\:grid-cols-4 { grid-template-columns: repeat(4, minmax(0, 1fr)); }
+        .gap-8 { gap: 2rem; }
+        .md\:flex-row { flex-direction: row; }
+        .overflow-hidden { overflow: hidden; }
+        .relative { position: relative; }
+        .absolute { position: absolute; }
+        .top-2 { top: 0.5rem; }
+        .left-2 { left: 0.5rem; }
+        .inline-block { display: inline-block; }
+        .shadow-sm { box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.05); }
+
+        @media (min-width: 768px) {
+            .md\:block { display: block; }
+            .md\:hidden { display: none; }
+            .md\:grid-cols-4 { grid-template-columns: repeat(4, minmax(0, 1fr)); }
+            .md\:flex-row { flex-direction: row; }
+            .md\:mt-0 { margin-top: 0; }
+            .sm\:px-3 { padding-left: 0.75rem; padding-right: 0.75rem; }
+            .sm\:px-6 { padding-left: 1.5rem; padding-right: 1.5rem; }
+        }
+
+        @media (min-width: 1024px) {
+            .lg\:px-8 { padding-left: 2rem; padding-right: 2rem; }
+        }
+
+        /* Updated wave container for better visual harmony */
+        .wave-container {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: calc(100vh - 20rem);
+            overflow: hidden;
+            z-index: 1;
+            /* Added subtle overlay for better content readability */
+            background: linear-gradient(135deg, 
+                rgba(15, 20, 25, 0.95) 0%, 
+                rgba(0, 96, 166, 0.1) 30%, 
+                rgba(20, 178, 115, 0.1) 70%, 
+                rgba(15, 20, 25, 0.95) 100%);
+        }
+
+        .wave {
+            position: absolute;
+            width: 120%;
+            height: 120%;
+            /* Reduced opacity for more subtle effect */
+            opacity: 0.3;
+        }
+
+        .wave-1 {
+            /* Simplified gradient with brand colors and reduced intensity */
+            background: linear-gradient(45deg,
+                    rgba(0, 96, 166, 0.4) 0%,
+                    rgba(20, 178, 115, 0.3) 50%,
+                    rgba(0, 96, 166, 0.2) 100%);
+            border-radius: 40% 60% 70% 30%;
+            animation: wave1 25s cubic-bezier(0.4, 0.0, 0.2, 1) infinite;
+            top: -20%;
+            left: -20%;
+        }
+
+        .wave-2 {
+            /* Simplified gradient with complementary colors */
+            background: linear-gradient(-45deg,
+                    rgba(20, 178, 115, 0.3) 0%,
+                    rgba(0, 96, 166, 0.2) 50%,
+                    rgba(20, 178, 115, 0.1) 100%);
+            border-radius: 60% 40% 30% 70%;
+            animation: wave2 30s cubic-bezier(0.25, 0.46, 0.45, 0.94) infinite reverse;
+            top: -10%;
+            right: -20%;
+        }
+
+        .wave-3 {
+            /* Subtle accent wave with minimal opacity */
+            background: linear-gradient(135deg,
+                    rgba(0, 96, 166, 0.2) 0%,
+                    rgba(20, 178, 115, 0.15) 60%,
+                    rgba(0, 96, 166, 0.1) 100%);
+            border-radius: 50% 50% 80% 20%;
+            animation: wave3 35s cubic-bezier(0.23, 1, 0.32, 1) infinite;
+            bottom: -20%;
+            left: -10%;
+        }
+
+        .wave-4 {
+            /* Final accent layer with very subtle presence */
+            background: linear-gradient(225deg,
+                    rgba(15, 20, 25, 0.3) 0%,
+                    rgba(0, 96, 166, 0.15) 40%,
+                    rgba(20, 178, 115, 0.1) 80%,
+                    rgba(15, 20, 25, 0.2) 100%);
+            border-radius: 30% 70% 50% 50%;
+            animation: wave4 40s cubic-bezier(0.165, 0.84, 0.44, 1) infinite reverse;
+            top: -5%;
+            right: -10%;
+        }
+
+        /* Wave animation keyframes */
+        @keyframes wave1 {
+
+            0%,
+            100% {
+                transform: rotate(0deg) scale(1) translate(0, 0);
+                border-radius: 40% 60% 70% 30%;
+            }
+
+            20% {
+                transform: rotate(72deg) scale(1.05) translate(5px, -5px);
+                border-radius: 50% 50% 60% 40%;
+            }
+
+            40% {
+                transform: rotate(144deg) scale(1.1) translate(10px, -10px);
+                border-radius: 60% 40% 30% 70%;
+            }
+
+            60% {
+                transform: rotate(216deg) scale(0.95) translate(-5px, 10px);
+                border-radius: 70% 30% 40% 60%;
+            }
+
+            80% {
+                transform: rotate(288deg) scale(1.02) translate(-10px, 5px);
+                border-radius: 35% 65% 55% 45%;
+            }
+        }
+
+        @keyframes wave2 {
+
+            0%,
+            100% {
+                transform: rotate(0deg) scale(1) translate(0, 0);
+                border-radius: 60% 40% 30% 70%;
+            }
+
+            25% {
+                transform: rotate(90deg) scale(1.15) translate(-10px, 10px);
+                border-radius: 45% 55% 65% 35%;
+            }
+
+            50% {
+                transform: rotate(180deg) scale(0.9) translate(15px, -15px);
+                border-radius: 70% 30% 40% 60%;
+            }
+
+            75% {
+                transform: rotate(270deg) scale(1.08) translate(8px, 8px);
+                border-radius: 55% 45% 75% 25%;
+            }
+        }
+
+        @keyframes wave3 {
+
+            0%,
+            100% {
+                transform: rotate(0deg) scale(1) translate(0, 0);
+                border-radius: 50% 50% 80% 20%;
+            }
+
+            16.67% {
+                transform: rotate(60deg) scale(1.08) translate(15px, -5px);
+                border-radius: 65% 35% 70% 30%;
+            }
+
+            33.33% {
+                transform: rotate(120deg) scale(0.92) translate(-8px, 18px);
+                border-radius: 80% 20% 50% 50%;
+            }
+
+            50% {
+                transform: rotate(180deg) scale(1.12) translate(0, -15px);
+                border-radius: 40% 60% 25% 75%;
+            }
+
+            66.67% {
+                transform: rotate(240deg) scale(0.88) translate(-18px, -8px);
+                border-radius: 25% 75% 60% 40%;
+            }
+
+            83.33% {
+                transform: rotate(300deg) scale(1.05) translate(12px, 12px);
+                border-radius: 70% 30% 85% 15%;
+            }
+        }
+
+        @keyframes wave4 {
+
+            0%,
+            100% {
+                transform: rotate(0deg) scale(1) translate(0, 0);
+                border-radius: 30% 70% 50% 50%;
+            }
+
+            33% {
+                transform: rotate(120deg) scale(1.18) translate(20px, -20px);
+                border-radius: 65% 35% 45% 55%;
+            }
+
+            67% {
+                transform: rotate(240deg) scale(0.85) translate(-15px, 25px);
+                border-radius: 75% 25% 60% 40%;
+            }
+        }
+
+        /* Floating particles */
+        .particle {
+            position: absolute;
+            width: 3px;
+            height: 3px;
+            background: rgba(20, 178, 115, 0.6);
+            border-radius: 50%;
+            animation: float 20s cubic-bezier(0.25, 0.46, 0.45, 0.94) infinite;
+            box-shadow: 0 0 6px rgba(20, 178, 115, 0.4);
+        }
+
+        .particle:nth-child(1) {
+            top: 20%;
+            left: 10%;
+            animation-delay: 0s;
+        }
+
+        .particle:nth-child(2) {
+            top: 60%;
+            left: 80%;
+            animation-delay: 6s;
+        }
+
+        .particle:nth-child(3) {
+            top: 80%;
+            left: 30%;
+            animation-delay: 12s;
+        }
+
+        .particle:nth-child(4) {
+            top: 40%;
+            left: 70%;
+            animation-delay: 4s;
+        }
+
+        .particle:nth-child(5) {
+            top: 10%;
+            left: 60%;
+            animation-delay: 10s;
+        }
+
+        @keyframes float {
+
+            0%,
+            100% {
+                transform: translateY(0px) translateX(0px) scale(1);
+                opacity: 0.4;
+            }
+
+            25% {
+                transform: translateY(-15px) translateX(8px) scale(1.1);
+                opacity: 0.6;
+            }
+
+            50% {
+                transform: translateY(-25px) translateX(15px) scale(0.9);
+                opacity: 0.8;
+            }
+
+            75% {
+                transform: translateY(-10px) translateX(5px) scale(1.05);
+                opacity: 0.5;
+            }
+        }
+
+        /* Sparkline effects */
+        .sparkline {
+            position: absolute;
+            width: 2px;
+            height: 20px;
+            background: linear-gradient(to bottom,
+                    rgba(20, 178, 115, 0) 0%,
+                    rgba(20, 178, 115, 0.8) 50%,
+                    rgba(0, 96, 166, 0.6) 100%);
+            border-radius: 1px;
+            opacity: 0;
+            animation: sparkline 7s cubic-bezier(0.25, 0.46, 0.45, 0.94) infinite;
+        }
+
+        .sparkline:nth-child(1) {
+            top: 15%;
+            left: 20%;
+            animation-delay: 0s;
+            transform: rotate(15deg);
+        }
+
+        .sparkline:nth-child(2) {
+            top: 45%;
+            left: 75%;
+            animation-delay: 1.4s;
+            transform: rotate(-20deg);
+        }
+
+        .sparkline:nth-child(3) {
+            top: 70%;
+            left: 35%;
+            animation-delay: 2.8s;
+            transform: rotate(30deg);
+        }
+
+        .sparkline:nth-child(4) {
+            top: 25%;
+            left: 85%;
+            animation-delay: 4.2s;
+            transform: rotate(-10deg);
+        }
+
+        .sparkline:nth-child(5) {
+            top: 85%;
+            left: 15%;
+            animation-delay: 5.6s;
+            transform: rotate(25deg);
+        }
+
+        .sparkline:nth-child(6) {
+            top: 55%;
+            left: 60%;
+            animation-delay: 0.7s;
+            transform: rotate(-35deg);
+        }
+
+        .sparkline:nth-child(7) {
+            top: 35%;
+            left: 45%;
+            animation-delay: 2.1s;
+            transform: rotate(40deg);
+        }
+
+        .sparkline:nth-child(8) {
+            top: 65%;
+            left: 90%;
+            animation-delay: 3.5s;
+            transform: rotate(-15deg);
+        }
+
+        @keyframes sparkline {
+
+            0%,
+            85%,
+            100% {
+                opacity: 0;
+                transform: translateY(0px) scale(0.8);
+            }
+
+            5% {
+                opacity: 0.3;
+                transform: translateY(-2px) scale(0.9);
+            }
+
+            15% {
+                opacity: 1;
+                transform: translateY(-5px) scale(1.2);
+            }
+
+            25% {
+                opacity: 0.8;
+                transform: translateY(-8px) scale(1.1);
+            }
+
+            35% {
+                opacity: 0.6;
+                transform: translateY(-10px) scale(1);
+            }
+
+            50% {
+                opacity: 0.4;
+                transform: translateY(-12px) scale(0.9);
+            }
+
+            65% {
+                opacity: 0.2;
+                transform: translateY(-15px) scale(0.8);
+            }
+
+            80% {
+                opacity: 0.1;
+                transform: translateY(-18px) scale(0.7);
+            }
+        }
+
+        /* Content styles */
+        .content {
+            position: relative;
+            z-index: 10;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            min-height: calc(100vh - 16rem - 20rem); /* Adjusted height to account for header and footer */
+            text-align: center;
+            padding: 2rem;
+            color: #F2F4F6;
+            /* Added subtle backdrop for better text contrast */
+            background: rgba(15, 20, 25, 0.3);
+            backdrop-filter: blur(10px);
+            border-radius: 20px;
+            margin: 2rem;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .logo {
+            font-size: 2.5rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+            /* Enhanced gradient with better brand color integration */
+            background: linear-gradient(135deg, #14B273 0%, #0060A6 70%, #14B273 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            letter-spacing: -0.02em;
+        }
+
+        .main-title {
+            font-size: 4.3rem;
+            font-weight: 600;
+            margin-bottom: 1.5rem;
+            line-height: 1.1;
+            /* Improved text shadow for better readability */
+            text-shadow: 0 2px 20px rgba(0, 0, 0, 0.7);
+            color: #ffffff;
+        }
+
+        .subtitle {
+            font-size: 1.2rem;
+            font-weight: 400;
+            margin-bottom: 2rem;
+            opacity: 0.9;
+            max-width: 600px;
+            line-height: 1.6;
+            /* Added subtle text shadow for better contrast */
+            text-shadow: 0 1px 3px rgba(0, 0, 0, 0.5);
+        }
+
+        .status-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            /* Enhanced badge styling with better contrast */
+            background: rgba(20, 178, 115, 0.15);
+            border: 1px solid rgba(20, 178, 115, 0.4);
+            padding: 0.75rem 1.5rem;
+            border-radius: 50px;
+            font-weight: 500;
+            margin-bottom: 3rem;
+            backdrop-filter: blur(15px);
+            box-shadow: 0 4px 15px rgba(20, 178, 115, 0.1);
+        }
+
+        .status-dot {
+            width: 8px;
+            height: 8px;
+            background: #14B273;
+            border-radius: 50%;
+            animation: pulse 2s infinite;
+        }
+
+        @keyframes pulse {
+
+            0%,
+            100% {
+                opacity: 1;
+                transform: scale(1);
+            }
+
+            50% {
+                opacity: 0.7;
+                transform: scale(1.2);
+            }
+        }
+
+        .progress-container {
+            width: 100%;
+            max-width: 400px;
+            margin-bottom: 2rem;
+        }
+
+        .progress-bar {
+            width: 100%;
+            height: 6px;
+            background: rgba(242, 244, 246, 0.2);
+            border-radius: 3px;
+            overflow: hidden;
+            margin-bottom: 1rem;
+        }
+
+        .progress-fill {
+            height: 100%;
+            background: linear-gradient(90deg, #14B273 0%, #0060A6 100%);
+            border-radius: 3px;
+            width: 75%;
+            animation: progressGlow 3s ease-in-out infinite alternate;
+        }
+
+        @keyframes progressGlow {
+            0% {
+                box-shadow: 0 0 5px rgba(20, 178, 115, 0.5);
+            }
+
+            100% {
+                box-shadow: 0 0 20px rgba(20, 178, 115, 0.8);
+            }
+        }
+
+        .progress-text {
+            font-size: 0.9rem;
+            opacity: 0.8;
+        }
+
+        .contact-info {
+            margin-top: 3rem;
+            font-size: 0.95rem;
+            opacity: 0.7;
+        }
+
+        .contact-info a {
+            color: #C9A43B;
+            text-decoration: none;
+            font-weight: 500;
+        }
+
+        .contact-info a:hover {
+            color: #14B273;
+            transition: color 0.3s ease;
+        }
+
+        /* Responsive design */
+        @media (max-width: 768px) {
+            .main-title {
+                font-size: 2.5rem;
+            }
+
+            .logo {
+                font-size: 2rem;
+            }
+
+            .subtitle {
+                font-size: 1.1rem;
+            }
+
+            .content {
+                padding: 1rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .main-title {
+                font-size: 2rem;
+            }
+
+            .logo {
+                font-size: 1.5rem;
+            }
+
+            .subtitle {
+                font-size: 1rem;
+            }
+        }
+
+        /* Remove underlines from all navigation links */
+        nav a {
+            text-decoration: none;
+        }
+
+        /* Ensure footer has higher z-index and solid background */
+        footer {
+            position: relative;
+            z-index: 20;
+            background-color: #1a202c !important;
+            /* Added smooth transition border */
+            border-top: 1px solid rgba(20, 178, 115, 0.2);
+            box-shadow: 0 -4px 20px rgba(0, 0, 0, 0.3);
+        }
+
+        /* Added smooth transition section before footer */
+        .footer-transition {
+            height: 4rem;
+            background: linear-gradient(to bottom, 
+                rgba(15, 20, 25, 0.8) 0%, 
+                rgba(26, 32, 44, 0.9) 50%,
+                #1a202c 100%);
+            position: relative;
+            z-index: 15;
+        }
+
+        /* Added dropdown animation styles from homepage */
+        /* Dropdown Styles */
+        .dropdown-menu {
+            opacity: 0;
+            visibility: hidden;
+            transform: translateY(-10px);
+            transition: all 0.2s ease-in-out;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1), 0 4px 10px rgba(0, 0, 0, 0.05);
+        }
+
+        .dropdown-container.active .dropdown-menu {
+            opacity: 1;
+            visibility: visible;
+            transform: translateY(0);
+        }
+
+        .dropdown-container.active button svg {
+            transform: rotate(180deg);
+        }
+    </style>
+</head>
+
+<body>
+     <!-- Navigation Header -->
+    <nav class="bg-white shadow-soft sticky top-0 z-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-16">
+                <!-- Logo -->
+                <div class="flex items-center">
+                    <div class="flex-shrink-0">
+                        <a href="homepage_esg_intelligence_hub.html" class="flex items-center space-x-3">
+                            <img src="/images/logo.jpeg" alt="Erasight ESG Consulting" class="h-10 w-10" />
+                            <div class="flex flex-col">
+                                <span class="text-lg font-bold text-text-primary">Erasight</span>
+                                <span class="text-xs text-text-secondary uppercase tracking-wide">CONSULTING GROUP</span>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Desktop Navigation -->
+                <div class="hidden md:block">
+                    <div class="ml-10 flex items-baseline space-x-8">
+                        <a href="homepage_esg_intelligence_hub.html" class="text-text-secondary hover:text-primary transition-colors px-3 py-2 rounded-md text-sm">Home</a>
+                        <a href="services_esg_transformation_methodology.html" class="text-text-secondary hover:text-primary transition-colors px-3 py-2 rounded-md text-sm">Services</a>
+                        
+                        
+                        <a href="on-process.html" class="text-text-secondary hover:text-primary transition-colors px-3 py-2 rounded-md text-sm">Resources</a>
+                        <a href="about_esg_leadership_team.html" class="text-text-secondary hover:text-primary transition-colors px-3 py-2 rounded-md text-sm">About Us</a>
+                        <a href="esg_form.html" class="btn-primary">Get Started</a>
+                    </div>
+                </div>
+
+                <!-- Mobile menu button -->
+                <div class="md:hidden">
+                    <button type="button" class="text-text-secondary hover:text-primary p-2" onclick="toggleMobileMenu()">
+                        <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/>
+                        </svg>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Mobile Navigation -->
+        <div id="mobile-menu" class="md:hidden hidden">
+            <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3 bg-white border-t border-border">
+                <a href="homepage_esg_intelligence_hub.html" class="text-text-secondary hover:text-primary block px-3 py-2 rounded-md text-base">Home</a>
+                <!-- Added Intelligence Dashboard link to mobile menu -->
+                <a href="esg_intelligence_dashboard.html" class="text-text-secondary hover:text-primary block px-3 py-2 rounded-md text-base">Intelligence Dashboard</a>
+                
+                <!-- Mobile Services Section -->
+                <div class="mobile-services">
+                    <button onclick="toggleMobileServices()" class="text-text-secondary hover:text-primary block px-3 py-2 rounded-md text-base w-full text-left flex items-center justify-between">
+                        Services
+                        <svg id="mobile-services-arrow" class="h-4 w-4 transition-transform duration-200" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
+                        </svg>
+                    </button>
+                    <div id="mobile-services-menu" class="hidden pl-6 space-y-1">
+                        <a href="services_esg_transformation_methodology.html" class="text-text-secondary hover:text-primary block px-3 py-2 rounded-md text-sm">Sustainability Strategy and Transformation</a>
+                        <a href="services_esg_transformation_methodology.html" class="text-text-secondary hover:text-primary block px-3 py-2 rounded-md text-sm">Sustainability Reporting</a>
+                        <a href="services_esg_transformation_methodology.html" class="text-text-secondary hover:text-primary block px-3 py-2 rounded-md text-sm">ESG Training</a>
+                    </div>
+                </div>
+                
+                <!-- Updated mobile navigation links to match homepage -->
+                <a href="client_success_stories.html" class="text-text-secondary hover:text-primary block px-3 py-2 rounded-md text-base">Success Stories</a>
+                <a href="about_esg_leadership_team.html" class="text-text-secondary hover:text-primary block px-3 py-2 rounded-md text-base">About Us</a>
+                <a href="get_started_esg_assessment_portal.html" class="btn-primary block text-center mx-3 my-2">Get Started</a>
+            </div>
+        </div>
+    </nav>
+
+
+    <!-- Animated wave background -->
+    <div class="wave-container">
+        <div class="wave wave-1"></div>
+        <div class="wave wave-2"></div>
+        <div class="wave wave-3"></div>
+        <div class="wave wave-4"></div>
+
+        <!-- Floating particles -->
+        <div class="particle"></div>
+        <div class="particle"></div>
+        <div class="particle"></div>
+        <div class="particle"></div>
+        <div class="particle"></div>
+
+        <!-- Sparkline effects -->
+        <div class="sparkline"></div>
+        <div class="sparkline"></div>
+        <div class="sparkline"></div>
+        <div class="sparkline"></div>
+        <div class="sparkline"></div>
+        <div class="sparkline"></div>
+        <div class="sparkline"></div>
+        <div class="sparkline"></div>
+    </div>
+
+    <!-- Main content -->
+    <div class="content">
+        <div class="logo">ERASIGHT</div>
+
+        <h1 class="main-title">Something Amazing<br>is Coming Soon</h1>
+
+        <p class="subtitle">
+            We're creating a remarkable digital experience that will revolutionize your workflow.
+            Something genuinely unique is being completed by our team.
+
+        </p>
+
+        <div class="status-badge">
+            <div class="status-dot"></div>
+            Currently in Development
+        </div>
+
+        <div class="progress-container">
+            <div class="progress-bar">
+                <div class="progress-fill"></div>
+            </div>
+            <div class="progress-text">75% Complete</div>
+        </div>
+
+        <div class="contact-info">
+            Questions? Reach out to us at <a href="mailto:info@erasight.com">contact@erasightconsulting.com</a>
+        </div>
+    </div>
+
+    <!-- Added smooth transition section before footer -->
+    <div class="footer-transition"></div>
+
+</body>
+
+</html>
