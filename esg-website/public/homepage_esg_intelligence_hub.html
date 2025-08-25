@@ -494,11 +494,17 @@
         </div>
     </nav>
 
-    <!-- Hero Section with Animated Wave Background -->
+    <!-- Hero Section with Background Image for Desktop, Wave Animation for Mobile -->
     <section class="relative min-h-screen flex items-center overflow-hidden">
-        <!-- Replaced static background image with animated wave background -->
-        <!-- Animated Wave Background -->
-        <div class="absolute inset-0 wave-container">
+        <!-- Desktop Background Image -->
+        <div class="absolute inset-0 hidden md:block">
+            <img src="/images/ESG  Background.jpg" alt="ESG Background" class="w-full h-full object-cover" />
+            <!-- Content overlay for readability -->
+            <div class="absolute inset-0 bg-gradient-to-r from-black/70 via-black/50 to-black/30"></div>
+        </div>
+        
+        <!-- Mobile Animated Wave Background -->
+        <div class="absolute inset-0 wave-container md:hidden">
             <!-- Base gradient background -->
             <div class="absolute inset-0" style="background: linear-gradient(135deg, 
                 #0f1419 0%, 
@@ -1107,3 +1113,4 @@
     <script id="dhws-dataInjector" src="../public/dhws-data-injector.js"></script>
 </body>
 </html>
+
