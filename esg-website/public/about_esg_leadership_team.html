@@ -722,14 +722,20 @@
                         </div>
                     </div>
 
+                    <!-- Slider dots -->
+                    <div class="slider-dots">
+                        <div class="dot active" onclick="goToSlide(0)"></div>
+                        <div class="dot" onclick="goToSlide(1)"></div>
+                    </div>
+
                     <!-- Visual swipe indicator (only shows on hover) -->
                     <div class="swipe-indicator">
-                        <div class="swipe-arrow left-arrow" onclick="navigateSlide('prev')">
+                        <div class="swipe-arrow left-arrow" style="pointer-events: auto; cursor: pointer;" onclick="navigateSlide('prev')">
                             <svg width="24" height="24" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"/>
                             </svg>
                         </div>
-                        <div class="swipe-arrow right-arrow" onclick="navigateSlide('next')">
+                        <div class="swipe-arrow right-arrow" style="pointer-events: auto; cursor: pointer;" onclick="navigateSlide('next')">
                             <svg width="24" height="24" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/>
                             </svg>
@@ -769,13 +775,16 @@
                         updateSliderPosition();
                     }
 
+                    // Update arrow states after navigation
+                    updateArrowStates();
+
                     // Restart autoplay after navigation
                     autoplayInterval = setInterval(() => {
                         currentSlide = (currentSlide + 1) % totalSlides;
                         updateSliderPosition();
                     }, 8000);
                 };
-                
+
                 // Function to update arrow button states (enable/disable)
                 function updateArrowStates() {
                     const leftArrow = document.querySelector('.left-arrow');
@@ -814,7 +823,7 @@
                     dots.forEach((dot, index) => {
                         dot.classList.toggle('active', index === currentSlide);
                     });
-                    
+
                     // Update arrow states
                     updateArrowStates();
                 }
@@ -833,20 +842,29 @@
                 // Prevent default browser drag behavior
                 slider.addEventListener('dragstart', (e) => e.preventDefault());
 
+                // Function to go to specific slide
+                window.goToSlide = function(slideIndex) {
+                    // Clear autoplay when manually navigating
+                    clearInterval(autoplayInterval);
+                    
+                    currentSlide = slideIndex;
+                    updateSliderPosition();
+                    updateArrowStates();
+
+                    // Restart autoplay after navigation
+                    autoplayInterval = setInterval(() => {
+                        currentSlide = (currentSlide + 1) % totalSlides;
+                        updateSliderPosition();
+                    }, 8000);
+                };
+
                 // Dot indicator click events
-                dots.forEach((dot, index) => {
+                const dotsElements = document.querySelectorAll('.slider-dots .dot');
+                dotsElements.forEach((dot, index) => {
                     dot.addEventListener('click', (e) => {
                         e.preventDefault();
                         e.stopPropagation();
-                        currentSlide = index;
-                        updateSliderPosition();
-
-                        // Clear and restart autoplay
-                        clearInterval(autoplayInterval);
-                        autoplayInterval = setInterval(() => {
-                            currentSlide = (currentSlide + 1) % totalSlides;
-                            updateSliderPosition();
-                        }, 8000);
+                        goToSlide(index);
                     });
                 });
 
@@ -927,7 +945,7 @@
                         updateSliderPosition();
                     }
                 });
-                
+
                 // Initialize arrow states
                 updateArrowStates();
 
