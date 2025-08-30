@@ -302,9 +302,28 @@
                 width: 100%;
             }
 
-            .leader-card:hover {
-                transform: translateY(-10px);
-                box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+            /* Only apply hover effects on devices that support hover (desktop) */
+            @media (hover: hover) and (pointer: fine) {
+                .leader-card:hover {
+                    transform: translateY(-10px);
+                    box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+                }
+
+                .leader-card:hover .card-image {
+                    transform: scale(1.05);
+                }
+            }
+
+            /* Ensure no hover effects on touch devices */
+            @media (hover: none) and (pointer: coarse) {
+                .leader-card:hover {
+                    transform: none;
+                    box-shadow: var(--card-shadow);
+                }
+
+                .leader-card:hover .card-image {
+                    transform: none;
+                }
             }
 
             .card-image-container {
@@ -324,10 +343,6 @@
                 height: 100%;
                 object-fit: cover;
                 transition: transform 0.6s ease;
-            }
-
-            .leader-card:hover .card-image {
-                transform: scale(1.05);
             }
 
             .badge {
@@ -424,8 +439,11 @@
                 transition: opacity 0.3s ease;
             }
 
-            .slider-container:hover .swipe-indicator {
-                opacity: 0.8;
+            /* Only show swipe indicator on hover for desktop */
+            @media (hover: hover) and (pointer: fine) {
+                .slider-container:hover .swipe-indicator {
+                    opacity: 0.8;
+                }
             }
 
             .swipe-arrow {
@@ -946,7 +964,7 @@
                 window.addEventListener('resize', () => {
                     const wasMobile = isMobile;
                     isMobile = window.innerWidth <= 768;
-                    
+
                     // If mobile state changed, recreate layout
                     if (wasMobile !== isMobile) {
                         currentSlide = 0;
@@ -958,7 +976,7 @@
                             return;
                         }
                     }
-                    
+
                     slideWidth = slider.offsetWidth;
                     updateSliderPosition(false); // Update position without animation on resize
                     updateArrowStates();
@@ -1000,7 +1018,7 @@
                 window.goToSlide = function(slideIndex) {
                     // Clear autoplay when manually navigating
                     clearInterval(autoplayInterval);
-                    
+
                     currentSlide = slideIndex;
                     updateSliderPosition();
                     updateArrowStates();
@@ -1146,7 +1164,7 @@
                     <h4 class="text-sm font-bold text-white">Contact</h4>
                     <ul class="space-y-2 text-sm text-gray-300">
                         <li> +84 908666386</li>
-                        <li><a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="167579786277756256736477657f717e6275797865637a627f78713875797b">contact@erasightconsulting.com</a></li>
+                        <li><a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="167579786277756556736477657f717e6275797865637a627f78713875797b">contact@erasightconsulting.com</a></li>
                         <li>Address: Saigon Paragon Building, 3 Nguyen Luong Bang Street, Tan My Ward, Ho Chi Minh City</li>
                         <li><a href="get_started_esg_assessment_portal.html" class="hover:text-white transition-colors">Get Started</a></li>
                     </ul>
