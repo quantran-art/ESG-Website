@@ -256,11 +256,33 @@
                 gap: 3rem;
             }
 
+            /* Mobile responsive: Show only 1 person per slide */
             @media (max-width: 768px) {
-                .slide:last-child .leaders-grid {
-                    grid-template-columns: 1fr;
+                .leaders-grid {
+                    grid-template-columns: 1fr !important;
                     max-width: 400px;
                     gap: 2rem;
+                    justify-content: center;
+                    padding: 0 2rem;
+                }
+
+                .slide:last-child .leaders-grid {
+                    grid-template-columns: 1fr !important;
+                    max-width: 400px;
+                    gap: 2rem;
+                }
+
+                .leader-card {
+                    max-width: 350px;
+                    margin: 0 auto;
+                }
+
+                .slider-container {
+                    margin: 0 1rem;
+                }
+
+                .slide {
+                    padding: 1.5rem 0;
                 }
             }
 
@@ -752,7 +774,8 @@
                 const slides = slider.querySelector('.slides');
                 const dots = slider.querySelectorAll('.dot');
                 const swipeHint = document.querySelector('#swipeHint');
-                const totalSlides = slider.querySelectorAll('.slide').length;
+                let totalSlides = slider.querySelectorAll('.slide').length;
+                let isMobile = window.innerWidth <= 768;
 
                 let currentSlide = 0;
                 let startX = 0;
@@ -761,6 +784,122 @@
                 let initialOffset = 0;
                 let slideWidth = slider.offsetWidth;
                 let autoplayInterval = null; // Initialize autoplayInterval
+
+                // All team members data
+                const allLeaders = [
+                    {
+                        name: 'Dao Minh Thuy',
+                        title: 'General Director',
+                        description: 'Driving operational excellence and sustainable development impact. Leading ESG\'s strategic vision.',
+                        image: 'images/chi-thuy.jpg',
+                        badge: 'primary'
+                    },
+                    {
+                        name: 'Nguyen Hoang Phu',
+                        title: 'Business Development Director',
+                        description: 'Driving growth through strategic, sustainability-focused partnerships. Specializes in ESG-aligned business opportunities.',
+                        image: 'images/anh-phu.jpg',
+                        badge: 'secondary'
+                    },
+                    {
+                        name: 'Dao Kim Tung',
+                        title: 'Product Director',
+                        description: 'Sustainable development expert ensuring science-based, client-ready reports.',
+                        image: 'images/chi-tung.jpg',
+                        badge: 'accent'
+                    },
+                    {
+                        name: 'Libby Lahar',
+                        title: 'Executive Partner',
+                        description: 'Bridging academic expertise and real-world practices to create actionable ESG strategies for sustainable corporate growth',
+                        image: 'images/chi-lahar.jpg',
+                        badge: 'primary-accent'
+                    },
+                    {
+                        name: 'Tran Hong Quan',
+                        title: 'Technical Product Executive',
+                        description: 'Creating an exceptional good product that not only meets high-quality standards but also plays a vital role in advancing the global transition toward sustainable solutions',
+                        image: 'images/anh-quan.jpg',
+                        badge: 'secondary-accent'
+                    }
+                ];
+
+                // Function to create mobile slides (1 person per slide)
+                function createMobileSlides() {
+                    if (!isMobile) return;
+
+                    // Clear existing slides
+                    slides.innerHTML = '';
+
+                    // Create individual slides for each team member
+                    allLeaders.forEach((leader, index) => {
+                        const badgeStyle = leader.badge === 'secondary' ? 'style="background: linear-gradient(135deg, var(--secondary), var(--primary));"' : 
+                            leader.badge === 'accent' ? 'style="background: linear-gradient(135deg, var(--accent), var(--secondary));"' :
+                            leader.badge === 'primary-accent' ? 'style="background: linear-gradient(135deg, var(--primary), var(--accent));"' :
+                            leader.badge === 'secondary-accent' ? 'style="background: linear-gradient(135deg, var(--secondary), var(--accent));"' : '';
+
+                        const titleStyle = leader.badge === 'secondary' ? 'style="background: linear-gradient(135deg, var(--secondary), var(--primary));"' : 
+                            leader.badge === 'accent' ? 'style="background: linear-gradient(135deg, var(--accent), var(--secondary));"' :
+                            leader.badge === 'primary-accent' ? 'style="background: linear-gradient(135deg, var(--primary), var(--accent));"' :
+                            leader.badge === 'secondary-accent' ? 'style="background: linear-gradient(135deg, var(--secondary), var(--accent));"' : '';
+
+                        const badgeIcon = leader.badge === 'secondary' ? '<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6"/>' :
+                            leader.badge === 'accent' ? '<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/>' :
+                            leader.badge === 'primary-accent' ? '<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"/>' :
+                            leader.badge === 'secondary-accent' ? '<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z"/><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"/>' :
+                            '<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4M7.835 4.697a3.42 3.42 0 001.946-.806 3.42 3.42 0 014.438 0 3.42 3.42 0 001.946.806 3.42 3.42 0 013.138 3.138 3.42 3.42 0 00.806 1.946 3.42 3.42 0 010 4.438 3.42 3.42 0 00-.806 1.946 3.42 3.42 0 01-3.138 3.138 3.42 3.42 0 00-1.946.806 3.42 3.42 0 01-4.438 0 3.42 3.42 0 00-1.946-.806 3.42 3.42 0 01-3.138-3.138 3.42 3.42 0 00-.806-1.946 3.42 3.42 0 010-4.438 3.42 3.42 0 00.806-1.946 3.42 3.42 0 013.138-3.138z"/>';
+
+                        const slideHTML = `
+                            <div class="slide">
+                                <div class="leaders-grid">
+                                    <div class="leader-card">
+                                        <div class="card-image-container">
+                                            <img src="${leader.image}" alt="${leader.name}, ${leader.title}" 
+                                                class="card-image" />
+                                            <div class="badge" ${badgeStyle}>
+                                                <svg width="20" height="20" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                                    ${badgeIcon}
+                                                </svg>
+                                            </div>
+                                        </div>
+                                        <div class="card-content">
+                                            <div class="card-header">
+                                                <h3 class="leader-name">${leader.name}</h3>
+                                                <span class="leader-title" ${titleStyle}>${leader.title}</span>
+                                            </div>
+                                            <p class="leader-description">
+                                                ${leader.description}
+                                            </p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        `;
+                        slides.insertAdjacentHTML('beforeend', slideHTML);
+                    });
+
+                    // Update total slides and dots
+                    totalSlides = allLeaders.length;
+                    updateDots();
+                }
+
+                // Function to update dots based on current layout
+                function updateDots() {
+                    const dotsContainer = document.querySelector('.slider-dots');
+                    dotsContainer.innerHTML = '';
+
+                    for (let i = 0; i < totalSlides; i++) {
+                        const dot = document.createElement('div');
+                        dot.className = `dot ${i === 0 ? 'active' : ''}`;
+                        dot.onclick = () => goToSlide(i);
+                        dotsContainer.appendChild(dot);
+                    }
+                }
+
+                // Initialize mobile layout if needed
+                if (isMobile) {
+                    createMobileSlides();
+                }
 
                 // Navigation function for arrow buttons
                 window.navigateSlide = function(direction) {
@@ -805,6 +944,21 @@
 
                 // Update on window resize
                 window.addEventListener('resize', () => {
+                    const wasMobile = isMobile;
+                    isMobile = window.innerWidth <= 768;
+                    
+                    // If mobile state changed, recreate layout
+                    if (wasMobile !== isMobile) {
+                        currentSlide = 0;
+                        if (isMobile) {
+                            createMobileSlides();
+                        } else {
+                            // Restore original desktop layout
+                            location.reload();
+                            return;
+                        }
+                    }
+                    
                     slideWidth = slider.offsetWidth;
                     updateSliderPosition(false); // Update position without animation on resize
                     updateArrowStates();
@@ -967,13 +1121,13 @@
                 <!-- Company Info -->
                 <div class="space-y-4">
                     <div class="flex items-center">
-                        <img src="/images/logo footer.jpg" alt="Erasight ESG Consulting" class="h-8 w-8 mr-3" />
+                        <img src="/images/logo.jpeg" alt="Erasight ESG Consulting" class="h-8 w-8 mr-3" />
                         <div class="flex flex-col">
                             <span class="text-sm font-bold text-white">Erasight</span>
                             <span class="text-sm font-bold text-white">CONSULTING GROUP</span>
                         </div>
                     </div>
-                    <p class="text-gray-300 text-sm">Insights For A Sustainable Future</p>
+                    <p class="text-gray-300 text-sm">Your Trusted Partner for Green Growth</p>
                 </div>
 
                 <!-- Services -->
