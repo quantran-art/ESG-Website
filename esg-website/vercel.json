@@ -1,0 +1,40 @@
+{
+  "rewrites": [
+    {
+      "source": "/about-team",
+      "destination": "/about_esg_leadership_team.html"
+    },
+    {
+      "source": "/client-stories",
+      "destination": "/client_success_stories.html"
+    },
+    {
+      "source": "/form",
+      "destination": "/esg_form.html"
+    },
+    {
+      "source": "/dashboard",
+      "destination": "/esg_intelligence_dashboard.html"
+    },
+    {
+      "source": "/get-started",
+      "destination": "/get_started_esg_assessment_portal.html"
+    },
+    {
+      "source": "/success-stories",
+      "destination": "/get_success_stories_duplicatev1.html"
+    },
+    {
+      "source": "/Homepage",
+      "destination": "/homepage_esg_intelligence_hub.html"
+    },
+    {
+      "source": "/on-process",
+      "destination": "/on-process.html"
+    },
+    {
+      "source": "/services",
+      "destination": "/services_esg_transformation_methodology.html"
+    }
+  ]
+}
