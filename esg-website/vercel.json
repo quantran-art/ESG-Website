@@ -25,7 +25,7 @@
       "destination": "/get_success_stories_duplicatev1.html"
     },
     {
-      "source": "/Homepage",
+      "source": "/",
       "destination": "/homepage_esg_intelligence_hub.html"
     },
     {
@@ -38,3 +38,4 @@
     }
   ]
 }
+
