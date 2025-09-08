@@ -32,12 +32,21 @@
       "source": "/on-process",
       "destination": "/on-process.html"
     },
+      {
+      "source": "/Blog",
+      "destination": "/Blog.html"
+    },
+      {
+      "source": "/post",
+      "destination": "/post.html"
+    },
     {
       "source": "/services",
       "destination": "/services_esg_transformation_methodology.html"
     }
   ]
 }
+
 
 
 
