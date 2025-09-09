@@ -500,12 +500,13 @@
         </div>
     </nav>
  <!-- Nội dung chính -->
-  <main class="container mx-auto py-16">
-    <h2 class="text-4xl font-bold mb-8 text-center">Bài viết mới nhất</h2>
-    <div id="blog-list" class="grid gap-8 grid-cols-1 md:grid-cols-2 lg:grid-cols-3">
-      <!-- Render posts từ blog.js -->
-    </div>
-  </main>
+<section class="container mx-auto py-10">
+  <h2 class="text-3xl font-bold mb-6">Bài viết mới nhất</h2>
+  <div id="blog-list" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+    <!-- Bài viết sẽ được render tại đây -->
+  </div>
+</section>
+<script src="/blog.js"></script>
   
     <!-- Simplified ESG Insights Ticker -->
     <section class="bg-primary text-white py-3 overflow-hidden">
@@ -845,7 +846,7 @@
         });
     </script>
     <script id="dhws-dataInjector" src="../public/dhws-data-injector.js"></script>
-    <script type="module" src="blog.js"></script>
 </body>
 </html>
+
 
