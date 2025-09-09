@@ -1,41 +1,53 @@
 // public/post.js
+(function () {
+  const API = { POST: (slug) => `/api/post?slug=${encodeURIComponent(slug)}` };
 
-async function fetchPost(slug) {
-  try {
-    const res = await fetch(`/api/post?slug=${slug}`);
-    if (!res.ok) throw new Error("Failed to fetch post");
-    const data = await res.json();
-    return data.data[0];
-  } catch (err) {
-    console.error("Error loading post:", err);
-    return null;
-  }
-}
+  function $(sel) { return document.querySelector(sel); }
+  function escapeHtml(str) { return String(str || "").replace(/[&<>"']/g, (s) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#039;" }[s])); }
 
-async function loadPost() {
-  const params = new URLSearchParams(window.location.search);
-  const slug = params.get("slug");
-
-  if (!slug) {
-    document.getElementById("post-container").innerHTML =
-      "<p class='text-red-500'>Không tìm thấy bài viết.</p>";
-    return;
-  }
-
-  const post = await fetchPost(slug);
-  if (!post) {
-    document.getElementById("post-container").innerHTML =
-      "<p class='text-gray-600'>Bài viết không tồn tại hoặc đã bị xóa.</p>";
-    return;
+  function normalize(item) {
+    if (!item) return null;
+    const p = item.attributes || item;
+    const thumb = (p.thumbnail && (p.thumbnail.data || p.thumbnail)) || null;
+    const img = thumb ? (thumb.attributes ? thumb.attributes.url : thumb.url) : null;
+    const author = p.author?.data || p.author;
+    return {
+      id: item.id || p.id,
+      title: p.title || "",
+      slug: p.slug || "",
+      content: p.content || "",
+      image: img,
+      author: author ? (author.attributes ? author.attributes.name : author.name) : null,
+      publishedAt: p.publishedAt || null,
+    };
   }
 
-  const attr = post.attributes;
-  document.getElementById("post-container").innerHTML = `
-    <article>
-      <h1 class="text-4xl font-bold mb-6">${attr.title}</h1>
-      <div class="text-gray-700 leading-relaxed">${attr.content}</div>
-    </article>
-  `;
-}
+  function renderPost(data) {
+    const post = normalize(data);
+    if (!post) return;
+    if ($("#post-title")) $("#post-title").textContent = post.title;
+    if ($("#post-cover") && post.image) {
+      const img = $("#post-cover");
+      img.src = post.image.startsWith("http") ? post.image : post.image;
+      img.alt = post.title;
+    }
+    if ($("#post-author") && post.author) $("#post-author").textContent = post.author;
+    if ($("#post-content")) $("#post-content").innerHTML = post.content;
+  }
 
-document.addEventListener("DOMContentLoaded", loadPost);
+  async function init() {
+    const params = new URLSearchParams(location.search);
+    const slug = params.get("slug");
+    if (!slug) return;
+    try {
+      const res = await fetch(API.POST(slug));
+      const json = await res.json();
+      const data = json?.data || json;
+      renderPost(data);
+    } catch (e) {
+      console.error(e);
+    }
+  }
+
+  document.addEventListener("DOMContentLoaded", init);
+})();
