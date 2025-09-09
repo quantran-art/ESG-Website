@@ -502,11 +502,27 @@
 
 
 
-  <!-- Nội dung bài viết -->
-  <main class="container mx-auto py-16">
-    <div id="post-container" class="prose lg:prose-xl max-w-none">
-      <!-- Render post từ post.js -->
-    </div>
+ <!-- MAN IDEA CONTENT POST -->
+  <main id="main-content">
+    <article class="post container">
+      <header class="post-header">
+        <!-- ⚠️ JS sẽ set tiêu đề -->
+        <h1 id="post-title" class="post-title"></h1>
+
+        <div class="post-meta">
+          <!-- ⚠️ JS sẽ set tác giả nếu có -->
+          <span id="post-author" class="post-author"></span>
+        </div>
+      </header>
+
+      <!-- ⚠️ JS sẽ set ảnh cover nếu có -->
+      <figure class="post-cover">
+        <img id="post-cover" alt="" />
+      </figure>
+
+      <!-- ⚠️ JS sẽ inject nội dung HTML từ Strapi -->
+      <section id="post-content" class="post-content"></section>
+    </article>
   </main>
 
 
