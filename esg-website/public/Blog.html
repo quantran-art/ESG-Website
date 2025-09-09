@@ -500,13 +500,17 @@
         </div>
     </nav>
  <!-- Nội dung chính -->
-  <main class="container mx-auto py-16">
-    <h2 class="text-4xl font-bold mb-8 text-center">Bài viết mới nhất</h2>
-    <div id="blog-list" class="grid gap-8 grid-cols-1 md:grid-cols-2 lg:grid-cols-3">
-      <!-- Render posts từ blog.js -->
-    </div>
+   <main id="main-content">
+    <section class="section section-blog">
+      <div class="container">
+        <h1 class="page-title">Bài viết mới nhất</h1>
+
+        <!-- ⚠️ Điểm mount để JS render danh sách bài viết -->
+        <div id="blog-list" aria-live="polite"></div>
+        <!-- JS /public/blog.js sẽ tự inject grid cards + CSS -->
+      </div>
+    </section>
   </main>
-<script src="/blog.js"></script>
   
     <!-- Simplified ESG Insights Ticker -->
     <section class="bg-primary text-white py-3 overflow-hidden">
@@ -846,8 +850,11 @@
         });
     </script>
     <script id="dhws-dataInjector" src="../public/dhws-data-injector.js"></script>
+      <!-- Bắt buộc: script render danh sách bài -->
+  <script src="/blog.js" defer></script>
 </body>
 </html>
+
 
 
 
