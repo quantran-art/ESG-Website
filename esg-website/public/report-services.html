@@ -1,0 +1,665 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>ESG Sustainability Reporting - Professional Data-Driven Reports | Erasight ESG Consulting</title>
+    <meta name="description" content="Expert-led ESG sustainability reporting services. Data-driven, greenwashing-proof reports with global standards and local relevance. Transform compliance into competitive advantage." />
+    <link rel="stylesheet" href="css/main.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <script type="module" src="https://static.rocket.new/rocket-web.js?_cfg=https%3A%2F%2Fesgconsul5382back.builtwithrocket.new&_be=https%3A%2F%2Fapplication.rocket.new&_v=0.1.6"></script>
+    <meta name="google-site-verification" content="UMxjGSrNDX9uny4lK25CQ6wYsJA0KK5H9dkM1kYJ7CA" />
+    <!-- Favicon cơ bản -->
+    <link rel="icon" href="favicon.ico" type="image/x-icon">
+    <!-- Các kích thước favicon phổ biến -->
+    <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
+    <!-- Dành cho iOS / iPhone -->
+    <link rel="apple-touch-icon" href="apple-touch-icon.png">
+    <style>
+        /* Dropdown Styles */
+        .dropdown-menu {
+            opacity: 0;
+            visibility: hidden;
+            transform: translateY(-10px);
+            transition: all 0.2s ease-in-out;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1), 0 4px 10px rgba(0, 0, 0, 0.05);
+        }
+
+        .dropdown-container.active .dropdown-menu {
+            opacity: 1;
+            visibility: visible;
+            transform: translateY(0);
+        }
+
+        .dropdown-container.active button svg {
+            transform: rotate(180deg);
+        }
+
+        /* Service Feature Cards */
+        .service-feature {
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .service-feature::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.1), transparent);
+            transition: left 0.5s;
+        }
+
+        .service-feature:hover::before {
+            left: 100%;
+        }
+
+        .service-feature:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+        }
+
+        /* Enhanced animations */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes slideInLeft {
+            from {
+                opacity: 0;
+                transform: translateX(-50px);
+            }
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+
+        @keyframes slideInRight {
+            from {
+                opacity: 0;
+                transform: translateX(50px);
+            }
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+
+        .animate-fadeInUp {
+            animation: fadeInUp 0.8s ease-out forwards;
+        }
+
+        .animate-slideInLeft {
+            animation: slideInLeft 0.8s ease-out forwards;
+        }
+
+        .animate-slideInRight {
+            animation: slideInRight 0.8s ease-out forwards;
+        }
+
+        .stagger-animation {
+            opacity: 0;
+            transform: translateY(20px);
+        }
+
+        .stagger-animation.animate {
+            animation: fadeInUp 0.6s ease-out forwards;
+        }
+
+        .stagger-animation:nth-child(1) { animation-delay: 0.1s; }
+        .stagger-animation:nth-child(2) { animation-delay: 0.2s; }
+        .stagger-animation:nth-child(3) { animation-delay: 0.3s; }
+        .stagger-animation:nth-child(4) { animation-delay: 0.4s; }
+
+        /* Enhanced gradient backgrounds for service cards */
+        .expert-led-bg {
+            background: linear-gradient(135deg, #0060A5 0%, #1e3a8a 100%);
+            box-shadow: 0 20px 40px rgba(0, 96, 165, 0.3);
+        }
+
+        .greenwashing-proof-bg {
+            background: linear-gradient(135deg, #14B273 0%, #047857 100%);
+            box-shadow: 0 20px 40px rgba(20, 178, 115, 0.3);
+        }
+
+        .global-ready-bg {
+            background: linear-gradient(135deg, #2dd4bf 0%, #0d9488 100%);
+            box-shadow: 0 20px 40px rgba(45, 212, 191, 0.3);
+        }
+
+        .value-beyond-bg {
+            background: linear-gradient(135deg, #f59e0b 0%, #d97706 100%);
+            box-shadow: 0 20px 40px rgba(245, 158, 11, 0.3);
+        }
+
+        /* Enhanced text effects */
+        .hero-title-main {
+            background: linear-gradient(135deg, #ffffff 0%, #f0f9ff 50%, #e0f2fe 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            text-shadow: 3px 3px 6px rgba(0,0,0,0.8);
+        }
+
+        .hero-title-accent {
+            background: linear-gradient(135deg, #22d3ee 0%, #14b8a6 30%, #10b981 60%, #059669 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            filter: drop-shadow(2px 2px 4px rgba(0,0,0,0.5));
+        }
+
+        /* Icon styling */
+        .service-icon {
+            width: 80px;
+            height: 80px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 24px;
+            background: rgba(255, 255, 255, 0.2);
+            backdrop-filter: blur(10px);
+        }
+
+        /* Process steps styling */
+        .process-step {
+            position: relative;
+            padding-left: 60px;
+        }
+
+        .process-step::before {
+            content: attr(data-step);
+            position: absolute;
+            left: 0;
+            top: 0;
+            width: 40px;
+            height: 40px;
+            background: linear-gradient(135deg, #0060A5, #14B273);
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+            font-size: 18px;
+        }
+
+        .process-step::after {
+            content: '';
+            position: absolute;
+            left: 19px;
+            top: 40px;
+            width: 2px;
+            height: calc(100% + 20px);
+            background: linear-gradient(180deg, #0060A5, #14B273);
+            opacity: 0.3;
+        }
+
+        .process-step:last-child::after {
+            display: none;
+        }
+    </style>
+</head>
+<body class="bg-background text-text-primary">
+    <!-- Navigation Header -->
+    <nav class="bg-white shadow-soft sticky top-0 z-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-16">
+                <!-- Logo -->
+                <div class="flex items-center">
+                    <div class="flex-shrink-0">
+                        <a href="homepage_esg_intelligence_hub.html" class="flex items-center space-x-3">
+                            <img src="/images/logo.jpeg" alt="Erasight ESG Consulting" class="h-10 w-10" />
+                            <div class="flex flex-col">
+                                <span class="text-lg font-bold text-text-primary">Erasight</span>
+                                <span class="text-xs text-text-secondary uppercase tracking-wide">CONSULTING GROUP</span>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Desktop Navigation -->
+                <div class="hidden md:block">
+                    <div class="ml-10 flex items-baseline space-x-8">
+                        <a href="/Homepage" class="text-text-secondary hover:text-primary transition-colors px-3 py-2 rounded-md text-sm">Home</a>
+                        
+                        <!-- Services Dropdown -->
+                        <div class="relative dropdown-container" onclick="toggleServicesDropdown(event)" onmouseleave="hideServicesDropdown()">
+                            <button class="text-primary font-semibold px-3 py-2 rounded-md text-sm flex items-center">
+                                Services
+                                <svg class="ml-1 h-4 w-4 transition-transform duration-200" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
+                                </svg>
+                            </button>
+                            
+                            <!-- Dropdown Menu -->
+                            <div class="dropdown-menu absolute top-full left-0 mt-1 w-80 bg-white rounded-lg shadow-lg border border-gray-200 opacity-0 invisible transform translate-y-2 transition-all duration-200 z-50">
+                                <div class="py-2">
+                                    <a href="/services" class="block px-4 py-3 text-sm text-text-primary hover:bg-gray-50 hover:text-primary transition-colors border-b border-gray-100 last:border-b-0">
+                                        <div class="font-medium">Sustainability Strategy and Transformation</div>
+                                        <div class="text-xs text-text-secondary mt-1">ESG strategy, regulatory compliance, and crisis communication</div>
+                                    </a>
+                                    <a href="services_esg_sustainability_reporting.html" class="block px-4 py-3 text-sm text-primary bg-primary-50 hover:bg-primary-100 transition-colors border-b border-gray-100 last:border-b-0">
+                                        <div class="font-medium">Sustainability Reporting</div>
+                                        <div class="text-xs text-primary mt-1">ESG reporting, data management, and GHG inventory</div>
+                                    </a>
+                                    <a href="/services" class="block px-4 py-3 text-sm text-text-primary hover:bg-gray-50 hover:text-primary transition-colors border-b border-gray-100 last:border-b-0">
+                                        <div class="font-medium">ESG Training</div>
+                                        <div class="text-xs text-text-secondary mt-1">Workshops, masterclasses, and tailor-made training</div>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <a href="/Blog" class="text-text-secondary hover:text-primary transition-colors px-3 py-2 rounded-md text-sm">Resources</a>
+                        <a href="/about-team" class="text-text-secondary hover:text-primary transition-colors px-3 py-2 rounded-md text-sm">About Us</a>
+                        <a href="/form" class="btn-primary">Get Started</a>
+                    </div>
+                </div>
+
+                <!-- Mobile menu button -->
+                <div class="md:hidden">
+                    <button type="button" class="text-text-secondary hover:text-primary p-2" onclick="toggleMobileMenu()">
+                        <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/>
+                        </svg>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Mobile Navigation -->
+        <div id="mobile-menu" class="md:hidden hidden">
+            <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3 bg-white border-t border-border">
+                <a href="/Homepage" class="text-text-secondary hover:text-primary block px-3 py-2 rounded-md text-base">Home</a>
+                
+                <!-- Mobile Services Section -->
+                <div class="mobile-services">
+                    <button onclick="toggleMobileServices()" class="text-primary font-semibold block px-3 py-2 rounded-md text-base w-full text-left flex items-center justify-between">
+                        Services
+                        <svg id="mobile-services-arrow" class="h-4 w-4 transition-transform duration-200" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
+                        </svg>
+                    </button>
+                    <div id="mobile-services-menu" class="pl-6 space-y-1">
+                        <a href="/services" class="text-text-secondary hover:text-primary block px-3 py-2 rounded-md text-sm">Sustainability Strategy and Transformation</a>
+                        <a href="services_esg_sustainability_reporting.html" class="text-primary font-medium block px-3 py-2 rounded-md text-sm">Sustainability Reporting</a>
+                        <a href="/services" class="text-text-secondary hover:text-primary block px-3 py-2 rounded-md text-sm">ESG Training</a>
+                    </div>
+                </div>
+                <a href="/about-team" class="text-text-secondary hover:text-primary block px-3 py-2 rounded-md text-base">About Us</a>
+                <a href="/form" class="btn-primary block text-center mx-3 my-2">Get Started</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="relative text-white py-20 min-h-[600px] flex items-center" style="background-image: url('/public/bgr_images.jpg'); background-size: cover; background-position: center; background-repeat: no-repeat;">
+        <!-- Dark overlay for better text readability -->
+        <div class="absolute inset-0 bg-black bg-opacity-60"></div>
+        
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="relative z-10 text-center animate-fadeInUp">
+                <div class="inline-flex items-center px-4 py-2 bg-white/20 rounded-full border border-white/30 backdrop-blur-sm mb-6">
+                    <span class="w-2 h-2 bg-green-400 rounded-full mr-2 animate-pulse"></span>
+                    <span class="text-sm font-medium text-white drop-shadow-lg">Expert-Led ESG Reporting</span>
+                </div>
+                
+                <h1 class="text-5xl lg:text-7xl font-bold mb-6 leading-tight">
+                    <span class="text-white drop-shadow-2xl" style="text-shadow: 3px 3px 6px rgba(0,0,0,0.8);">ESG Sustainability</span> <br/>
+                    <span class="bg-gradient-to-r from-cyan-400 via-teal-300 to-green-400 bg-clip-text text-transparent font-extrabold" style="text-shadow: 2px 2px 4px rgba(0,0,0,0.5); -webkit-text-stroke: 1px rgba(255,255,255,0.3);">Reporting Services</span>
+                </h1>
+                
+                <p class="text-xl lg:text-2xl leading-relaxed max-w-3xl mx-auto mb-8 text-white font-medium" style="text-shadow: 2px 2px 4px rgba(0,0,0,0.7);">
+                    Transform your sustainability data into compelling, credible reports that drive stakeholder confidence and regulatory compliance. Our expert-led approach ensures every report tells your authentic sustainability story.
+                </p>
+                
+                <div class="flex flex-col sm:flex-row gap-4 justify-center max-w-lg mx-auto">
+                    <a href="#services-overview" class="bg-gradient-to-r from-cyan-500 to-teal-500 text-white font-bold py-4 px-8 rounded-xl transition-all transform hover:scale-105 shadow-2xl hover:shadow-cyan-500/25" style="text-shadow: 1px 1px 2px rgba(0,0,0,0.5);">
+                        Explore Our Services
+                    </a>
+                    <a href="/form" class="border-2 border-white bg-white/10 backdrop-blur-sm text-white font-bold py-4 px-8 rounded-xl transition-all transform hover:scale-105 hover:bg-white hover:text-gray-800 shadow-2xl" style="text-shadow: 1px 1px 2px rgba(0,0,0,0.5);">
+                        Get Started
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Key Features Section -->
+    <section id="services-overview" class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <!-- Section Header -->
+            <div class="text-center mb-16 animate-fadeInUp">
+                <h2 class="text-3xl lg:text-4xl font-bold text-text-primary mb-4">
+                    Why Choose Our ESG Reporting?
+                </h2>
+                <p class="text-lg text-text-secondary max-w-3xl mx-auto">
+                    Our comprehensive approach to ESG sustainability reporting combines deep expertise, robust data integrity, and global best practices to deliver reports that exceed expectations.
+                </p>
+            </div>
+
+            <!-- Service Features Grid -->
+            <div class="grid lg:grid-cols-2 gap-8 mb-16">
+                <!-- Expert-Led -->
+                <div class="service-feature expert-led-bg text-white rounded-2xl p-8 stagger-animation">
+                    <div class="service-icon">
+                        <svg class="w-10 h-10" fill="currentColor" viewBox="0 0 20 20">
+                            <path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/>
+                        </svg>
+                    </div>
+                    <h3 class="text-2xl font-bold mb-4">Expert-Led</h3>
+                    <p class="text-lg mb-6 opacity-90">Reports designed and validated by experienced ESG professionals.</p>
+                    
+                    <div class="bg-white/10 backdrop-blur-sm rounded-xl p-6 border border-white/20">
+                        <h4 class="font-semibold mb-3">What This Means For You:</h4>
+                        <p class="text-sm leading-relaxed opacity-90">
+                            Each report is developed and reviewed by experts with extensive backgrounds in environmental and social impact assessment. Unlike generic content writers, our specialists bring sector-specific insights, regulatory knowledge, and practical expertise. This ensures that every deliverable is not only accurate but also aligned with the latest industry standards and stakeholder expectations.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Greenwashing-Proof -->
+                <div class="service-feature greenwashing-proof-bg text-white rounded-2xl p-8 stagger-animation">
+                    <div class="service-icon">
+                        <svg class="w-10 h-10" fill="currentColor" viewBox="0 0 20 20">
+                            <path fill-rule="evenodd" d="M2.166 4.999A11.954 11.954 0 0010 1.944 11.954 11.954 0 0017.834 5c.11.65.166 1.32.166 2.001 0 5.225-3.34 9.67-8 11.317C5.34 16.67 2 12.225 2 7c0-.682.057-1.35.166-2.001zm11.541 3.708a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"/>
+                        </svg>
+                    </div>
+                    <h3 class="text-2xl font-bold mb-4">Greenwashing-Proof</h3>
+                    <p class="text-lg mb-6 opacity-90">Data-driven reporting you can trust.</p>
+                    
+                    <div class="bg-white/10 backdrop-blur-sm rounded-xl p-6 border border-white/20">
+                        <h4 class="font-semibold mb-3">What This Means For You:</h4>
+                        <p class="text-sm leading-relaxed opacity-90">
+                            We build every report on verifiable and auditable data sources, minimizing risks of greenwashing and reputational damage. By ensuring full compliance with international and local regulations, our reports provide transparency and credibility—empowering you to communicate your ESG commitments with confidence.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Global-Ready, Locally Relevant -->
+                <div class="service-feature global-ready-bg text-white rounded-2xl p-8 stagger-animation">
+                    <div class="service-icon">
+                        <svg class="w-10 h-10" fill="currentColor" viewBox="0 0 20 20">
+                            <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zM4.332 8.027a6.012 6.012 0 011.912-2.706C6.512 5.73 6.974 6 7.5 6A1.5 1.5 0 019 7.5V8a2 2 0 004 0 2 2 0 011.523-1.943A5.977 5.977 0 0116 10c0 .34-.028.675-.083 1H15a2 2 0 00-2 2v2.197A5.973 5.973 0 0110 16v-2a2 2 0 00-2-2 2 2 0 01-2-2 2 2 0 00-1.668-1.973z"/>
+                        </svg>
+                    </div>
+                    <h3 class="text-2xl font-bold mb-4">Global-Ready, Locally Relevant</h3>
+                    <p class="text-lg mb-6 opacity-90">Bilingual delivery with global standards, tailored to local needs.</p>
+                    
+                    <div class="bg-white/10 backdrop-blur-sm rounded-xl p-6 border border-white/20">
+                        <h4 class="font-semibold mb-3">What This Means For You:</h4>
+                        <p class="text-sm leading-relaxed opacity-90">
+                            Our team delivers reports in multiple languages and with deep fluency in international ESG frameworks (GRI, SASB, TCFD, etc.) as well as local regulatory requirements. This unique blend allows you to effectively engage domestic stakeholders while remaining attractive and credible to global investors.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Value Beyond Reporting -->
+                <div class="service-feature value-beyond-bg text-white rounded-2xl p-8 stagger-animation">
+                    <div class="service-icon">
+                        <svg class="w-10 h-10" fill="currentColor" viewBox="0 0 20 20">
+                            <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/>
+                        </svg>
+                    </div>
+                    <h3 class="text-2xl font-bold mb-4">Value Beyond Reporting</h3>
+                    <p class="text-lg mb-6 opacity-90">A roadmap for long-term ESG growth.</p>
+                    
+                    <div class="bg-white/10 backdrop-blur-sm rounded-xl p-6 border border-white/20">
+                        <h4 class="font-semibold mb-3">What This Means For You:</h4>
+                        <p class="text-sm leading-relaxed opacity-90">
+                            We don't stop at compliance. Beyond producing reports, we help you design a strategic ESG roadmap that integrates sustainability into your core business operations. This approach enhances resilience, drives competitive advantage, and supports your long-term growth ambitions in an increasingly ESG-focused world.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Process Section -->
+    <section class="py-20 bg-gray-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16 animate-fadeInUp">
+                <h2 class="text-3xl lg:text-4xl font-bold text-text-primary mb-4">
+                    Our Reporting Process
+                </h2>
+                <p class="text-lg text-text-secondary max-w-3xl mx-auto">
+                    From initial assessment to final delivery, our structured approach ensures comprehensive, accurate, and impactful ESG reporting.
+                </p>
+            </div>
+
+            <div class="grid lg:grid-cols-2 gap-16 items-center">
+                <!-- Process Steps -->
+                <div class="space-y-8">
+                    <div class="process-step stagger-animation" data-step="1">
+                        <h3 class="text-xl font-bold text-text-primary mb-2">Initial Screening</h3>
+                        <p class="text-text-secondary">Get to know your company and your progress toward sustainability goals.</p>
+                    </div>
+
+                    <div class="process-step stagger-animation" data-step="2">
+                        <h3 class="text-xl font-bold text-text-primary mb-2">Framework Selection</h3>
+                        <p class="text-text-secondary">Choose suitable frameworks for company SDGs, GRI, CSRD, TCFD, etc.</p>
+                    </div>
+
+                    <div class="process-step stagger-animation" data-step="3">
+                        <h3 class="text-xl font-bold text-text-primary mb-2">Data Collection</h3>
+                        <p class="text-text-secondary">Collect and analyze the relevant data with high accuracy and verification.</p>
+                    </div>
+
+                    <div class="process-step stagger-animation" data-step="4">
+                        <h3 class="text-xl font-bold text-text-primary mb-2">Stakeholder Engagement</h3>
+                        <p class="text-text-secondary">Get insights and feedback from stakeholders to ensure comprehensive reporting.</p>
+                    </div>
+
+                    <div class="process-step stagger-animation" data-step="5">
+                        <h3 class="text-xl font-bold text-text-primary mb-2">Report Delivery</h3>
+                        <p class="text-text-secondary">Deliver the report and supporting documents with transparency and reliability.</p>
+                    </div>
+                </div>
+
+                <!-- Process Visualization -->
+                <div class="bg-white rounded-2xl shadow-elevated p-8 animate-slideInRight">
+                    <img src="/images/esg-digital-solutions.jpeg" alt="ESG Reporting Process" class="w-full h-64 object-cover rounded-xl mb-6" />
+                    <div class="space-y-4">
+                        <h3 class="text-2xl font-bold text-text-primary">Comprehensive & Reliable</h3>
+                        <p class="text-text-secondary leading-relaxed">
+                            We don't just produce a report – we tell your sustainable story with transparency and reliability. Our systematic approach ensures every aspect of your ESG journey is captured accurately and presented compellingly.
+                        </p>
+                        <div class="flex items-center space-x-2 text-primary">
+                            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
+                                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"/>
+                            </svg>
+                            <span class="font-medium">Expert validation at every step</span>
+                        </div>
+                        <div class="flex items-center space-x-2 text-primary">
+                            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
+                                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"/>
+                            </svg>
+                            <span class="font-medium">Fully auditable data sources</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="py-16 bg-primary text-white">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center animate-fadeInUp">
+            <h2 class="text-3xl lg:text-4xl font-bold mb-4">Ready to Transform Your ESG Reporting?</h2>
+            <p class="text-lg mb-8 max-w-2xl mx-auto opacity-90">
+                Partner with us to create ESG reports that not only meet compliance requirements but also drive meaningful business value and stakeholder confidence.
+            </p>
+            <div class="flex flex-col sm:flex-row gap-4 justify-center max-w-lg mx-auto">
+                <a href="/form" class="btn-secondary bg-white text-primary hover:bg-gray-100">
+                    Start Your Project
+                </a>
+                <a href="/about-team" class="btn-outline border-white text-white hover:bg-white hover:text-primary">
+                    Meet Our Experts
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-text-primary text-white py-16">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid md:grid-cols-4 gap-8">
+                <!-- Company Info -->
+                <div class="space-y-4">
+                    <div class="flex items-center">
+                        <img src="/images/logo footer.jpg" alt="Erasight ESG Consulting" class="h-8 w-8 mr-3" />
+                        <div class="flex flex-col">
+                            <span class="text-sm font-bold text-white">Erasight</span>
+                            <span class="text-sm font-bold text-white">CONSULTING GROUP</span>
+                        </div>
+                    </div>
+                    <p class="text-gray-300 text-sm">Insights For A Sustainable Future</p>
+                </div>
+
+                <!-- Services -->
+                <div>
+                    <h4 class="text-sm font-bold text-white">Services</h4>
+                    <ul class="space-y-2 text-sm text-gray-300">
+                        <li><a href="services_esg_transformation_methodology.html" class="hover:text-white transition-colors">ESG Sustainability Strategy and Transformation</a></li>
+                        <li><a href="services_esg_sustainability_reporting.html" class="text-white hover:text-gray-300 transition-colors">ESG Sustainability Reporting</a></li>
+                        <li><a href="services_esg_transformation_methodology.html" class="hover:text-white transition-colors">ESG Rating</a></li>
+                        <li><a href="services_esg_transformation_methodology.html" class="hover:text-white transition-colors">ESG Training & Certification</a></li>
+                    </ul>
+                </div>
+
+                <!-- Contact -->
+                <div>
+                    <h4 class="text-sm font-bold text-white">Contact</h4>
+                    <ul class="space-y-2 text-sm text-gray-300">
+                        <li> +84 908666386</li>
+                        <li>contact@erasightconsulting.com</li>
+                        <li>Address: Saigon Paragon Building, 3 Nguyen Luong Bang Street, Tan My Ward, Ho Chi Minh City</li>
+                        <li><a href="get_started_esg_assessment_portal.html" class="hover:text-white transition-colors">Get Started</a></li>
+                    </ul>
+                </div>
+
+                <!-- Location -->
+                <div>
+                    <h4 class="text-sm font-bold text-gray-400 mb-4">We Are Here</h4>
+                    <div class="space-y-3">
+                        <!-- Embedded Google Maps -->
+                        <div class="relative bg-gray-800 rounded-lg overflow-hidden border border-gray-700">
+                            <iframe 
+                                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3919.665!2d106.7218953!3d10.7296797!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x31752f89959156c9%3A0x2c5cc1c9a9470997!2s3%20Nguy%E1%BB%85n%20L%C6%B0%C6%A1ng%20B%E1%BA%B1ng%2C%20T%C3%A2n%20Ph%C3%BA%2C%20Qu%E1%BA%ADn%207%2C%20H%E1%BB%93%20Ch%C3%AD%20Minh%2C%20Vietnam!5e0!3m2!1sen!2s!4v1692000000000!5m2!1sen!2s"
+                                width="100%" 
+                                height="150" 
+                                style="border:0;" 
+                                allowfullscreen="" 
+                                loading="lazy" 
+                                referrerpolicy="no-referrer-when-downgrade"
+                                class="rounded-lg">
+                            </iframe>
+                            <!-- View larger map overlay -->
+                            <div class="absolute top-2 left-2">
+                                <a href="https://www.google.com/maps/dir//3+Nguy%E1%BB%85n+L%C6%B0%C6%A1ng+B%E1%BA%B1ng,+T%C3%A2n+Ph%C3%BA,+Qu%E1%BA%ADn+7,+H%E1%BB%93+Ch%C3%AD+Minh/@10.7296689,106.6394934,12z/data=!4m8!4m7!1m0!1m5!1m1!1s0x31752f89959156c9:0x2c5cc1c9a9470997!2m2!1d106.7218953!2d10.7296797?entry=ttu&g_ep=EgoyMDI1MDgxMy4wIKXMDSoASAFQAw%3D%3D" 
+                                   target="_blank" 
+                                   class="inline-block bg-white text-blue-600 text-xs px-2 py-1 rounded shadow-sm hover:bg-blue-50 transition-colors">
+                                    View larger map
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="border-t border-gray-700 mt-12 pt-8 flex flex-col md:flex-row justify-between items-center">
+                <p class="text-sm text-gray-400">© 2025 Erasight ESG Consulting. All Rights Reserved.</p>
+                <div class="flex space-x-6 mt-4 md:mt-0">
+                    <a href="javascript:void(0)" class="text-gray-400 hover:text-white transition-colors">Privacy Policy</a>
+                    <a href="javascript:void(0)" class="text-gray-400 hover:text-white transition-colors">Terms of Service</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Mobile menu toggle
+        function toggleMobileMenu() {
+            const menu = document.getElementById('mobile-menu');
+            menu.classList.toggle('hidden');
+        }
+
+        // Mobile services dropdown toggle
+        function toggleMobileServices() {
+            const menu = document.getElementById('mobile-services-menu');
+            const arrow = document.getElementById('mobile-services-arrow');
+            menu.classList.toggle('hidden');
+            arrow.classList.toggle('rotate-180');
+        }
+
+        // Desktop services dropdown functions
+        function toggleServicesDropdown(event) {
+            event.stopPropagation();
+            const dropdown = document.querySelector('.dropdown-container');
+            dropdown.classList.toggle('active');
+        }
+
+        function hideServicesDropdown() {
+            const dropdown = document.querySelector('.dropdown-container');
+            dropdown.classList.remove('active');
+        }
+
+        // Close dropdown when clicking outside
+        document.addEventListener('click', function(event) {
+            const dropdown = document.querySelector('.dropdown-container');
+            if (!dropdown.contains(event.target)) {
+                dropdown.classList.remove('active');
+            }
+        });
+
+        // Intersection Observer for animations
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('animate');
+                }
+            });
+        }, observerOptions);
+
+        // Observe all stagger animation elements
+        document.addEventListener('DOMContentLoaded', () => {
+            const staggerElements = document.querySelectorAll('.stagger-animation');
+            staggerElements.forEach(el => observer.observe(el));
+        });
+
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+    </script>
+</body>
+</html>
