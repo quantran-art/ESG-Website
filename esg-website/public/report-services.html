@@ -307,12 +307,11 @@
         </div>
     </nav>
 
-
-<!-- Hero Section with Background Image for Desktop, Wave Animation for Mobile -->
-<section class="relative flex items-center min-h-screen overflow-hidden text-white">
+<!-- Hero Section with Background Image -->
+<section class="relative flex items-center min-h-screen overflow-hidden">
   
-  <!-- Desktop Background Image -->
-  <div class="absolute inset-0 hidden md:block">
+  <!-- Background Image -->
+  <div class="absolute inset-0">
     <img 
       src="/images/bgr_images.jpg" 
       alt="ESG Sustainability Background" 
@@ -322,69 +321,59 @@
     <div class="absolute inset-0 bg-gradient-to-r from-black/70 via-black/50 to-black/30"></div>
   </div>
 
-  <!-- Mobile Wave Background -->
-  <div class="absolute inset-0 block md:hidden">
-    <svg class="w-full h-full" preserveAspectRatio="none" viewBox="0 0 1440 320">
-      <path fill="#0f172a" fill-opacity="1" 
-        d="M0,160L40,154.7C80,149,160,139,240,128C320,117,400,107,480,122.7C560,139,640,181,720,208C800,235,880,245,960,245.3C1040,245,1120,235,1200,213.3C1280,192,1360,160,1400,144L1440,128L1440,0L1400,0C1360,0,1280,0,1200,0C1120,0,1040,0,960,0C880,0,800,0,720,0C640,0,560,0,480,0C400,0,320,0,240,0C160,0,80,0,40,0L0,0Z">
-      </path>
-    </svg>
-    <div class="absolute inset-0 bg-black/60"></div>
-  </div>
-
   <!-- Content -->
-  <div class="relative z-20 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-    <div class="text-center animate-fadeInUp">
-      
-      <!-- Badge -->
-      <div class="inline-flex items-center px-4 py-2 mb-6 bg-white/20 rounded-full border border-white/30 backdrop-blur-sm">
-        <span class="w-2 h-2 mr-2 bg-green-400 rounded-full animate-pulse"></span>
-        <span class="text-sm font-medium drop-shadow-lg">Expert-Led ESG Reporting</span>
-      </div>
+  <div class="relative z-20 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center animate-fadeInUp">
+    
+    <!-- Badge -->
+    <div class="inline-flex items-center px-4 py-2 mb-6 bg-white/20 rounded-full border border-white/30 backdrop-blur-sm">
+      <span class="w-2 h-2 mr-2 bg-green-400 rounded-full animate-pulse"></span>
+      <span class="text-sm font-medium text-[#0060A6] drop-shadow-lg">Expert-Led ESG Reporting</span>
+    </div>
 
-      <!-- Heading -->
-      <h1 class="mb-6 text-5xl font-bold leading-tight lg:text-7xl">
-        <span class="drop-shadow-2xl [text-shadow:3px_3px_6px_rgba(0,0,0,0.8)]">
-          ESG Sustainability
-        </span>
-        <br />
-        <span class="bg-gradient-to-r from-cyan-400 via-teal-300 to-green-400 bg-clip-text text-transparent font-extrabold 
-                     [text-shadow:2px_2px_4px_rgba(0,0,0,0.5)] 
-                     [-webkit-text-stroke:1px_rgba(255,255,255,0.3)]">
-          Reporting Services
-        </span>
-      </h1>
+    <!-- Heading -->
+    <h1 class="mb-6 text-3xl font-bold leading-tight sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl">
+      <span class="text-[#0060A6] drop-shadow-2xl [text-shadow:2px_2px_6px_rgba(0,0,0,0.4)]">
+        ESG Sustainability
+      </span>
+      <br />
+      <span class="bg-gradient-to-r from-[#0060A6] to-[#14B273] bg-clip-text text-transparent font-extrabold 
+                   [text-shadow:1px_1px_3px_rgba(0,0,0,0.5)]">
+        Reporting Services
+      </span>
+    </h1>
 
-      <!-- Description -->
-      <p class="max-w-3xl mx-auto mb-8 text-xl font-medium leading-relaxed lg:text-2xl drop-shadow-lg 
-                 [text-shadow:2px_2px_4px_rgba(0,0,0,0.7)]">
-        Transform your sustainability data into compelling, credible reports that drive stakeholder confidence 
-        and regulatory compliance. Our expert-led approach ensures every report tells your authentic 
-        sustainability story.
-      </p>
+    <!-- Description -->
+    <p class="max-w-3xl mx-auto mb-8 text-base font-medium leading-relaxed sm:text-lg md:text-xl lg:text-2xl text-[#0060A6] 
+               drop-shadow-lg [text-shadow:1px_1px_3px_rgba(0,0,0,0.4)]">
+      Transform your sustainability data into compelling, credible reports that drive stakeholder confidence 
+      and regulatory compliance. Our expert-led approach ensures every report tells your authentic 
+      sustainability story.
+    </p>
 
-      <!-- Buttons -->
-      <div class="flex flex-col justify-center max-w-lg gap-4 mx-auto sm:flex-row">
-        <a 
-          href="#services-overview" 
-          class="px-8 py-4 font-bold text-white transition-transform transform rounded-xl shadow-2xl 
-                 bg-gradient-to-r from-cyan-500 to-teal-500 hover:scale-105 hover:shadow-cyan-500/25 
-                 [text-shadow:1px_1px_2px_rgba(0,0,0,0.5)]"
-        >
-          Explore Our Services
-        </a>
-        <a 
-          href="/form" 
-          class="px-8 py-4 font-bold text-white transition-transform transform bg-white/10 border-2 border-white 
-                 rounded-xl shadow-2xl backdrop-blur-sm hover:scale-105 hover:bg-white hover:text-gray-800 
-                 [text-shadow:1px_1px_2px_rgba(0,0,0,0.5)]"
-        >
-          Get Started
-        </a>
-      </div>
+    <!-- Buttons -->
+    <div class="flex flex-col justify-center max-w-lg gap-4 mx-auto sm:flex-row">
+      <a 
+        href="#services-overview" 
+        class="px-6 py-3 text-sm font-bold text-white transition-transform transform rounded-xl shadow-2xl 
+               sm:px-8 sm:py-4 sm:text-base 
+               bg-gradient-to-r from-[#0060A6] to-[#14B273] hover:scale-105 hover:shadow-lg 
+               [text-shadow:1px_1px_2px_rgba(0,0,0,0.5)]"
+      >
+        Explore Our Services
+      </a>
+      <a 
+        href="/form" 
+        class="px-6 py-3 text-sm font-bold text-[#0060A6] transition-transform transform border-2 border-[#0060A6] 
+               rounded-xl shadow-2xl bg-white hover:scale-105 hover:bg-[#0060A6] hover:text-white 
+               sm:px-8 sm:py-4 sm:text-base 
+               [text-shadow:1px_1px_2px_rgba(0,0,0,0.5)]"
+      >
+        Get Started
+      </a>
     </div>
   </div>
 </section>
+
 
 
 
@@ -712,6 +701,7 @@
 </body>
 
 </html>
+
 
 
 
