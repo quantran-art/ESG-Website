@@ -306,20 +306,24 @@
             </div>
         </div>
     </nav>
-<section class="relative text-white py-20 min-h-[600px] flex items-center" style="background-image: url('/public/images/bgr_images.jpg'); background-size: cover; background-position: center; background-repeat: no-repeat;">
-    <!-- Dark overlay for better text readability -->
-    <div class="absolute inset-0 bg-black bg-opacity-60"></div>
+
+<section class="relative text-white py-20 min-h-[600px] flex items-center">
+    <!-- Hình nền sử dụng thẻ img thay vì CSS background -->
+    <img src="/public/images/bgr_images.jpg" alt="ESG Sustainability Background" class="absolute inset-0 w-full h-full object-cover z-0" />
     
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div class="relative z-10 text-center animate-fadeInUp">
+    <!-- Dark overlay for better text readability -->
+    <div class="absolute inset-0 bg-black bg-opacity-60 z-10"></div>
+    
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-20">
+        <div class="text-center animate-fadeInUp">
             <div class="inline-flex items-center px-4 py-2 bg-white/20 rounded-full border border-white/30 backdrop-blur-sm mb-6">
-                <span class="w-2 h-2 bg-[#14B273] rounded-full mr-2 animate-pulse"></span>
+                <span class="w-2 h-2 bg-green-400 rounded-full mr-2 animate-pulse"></span>
                 <span class="text-sm font-medium text-white drop-shadow-lg">Expert-Led ESG Reporting</span>
             </div>
             
             <h1 class="text-5xl lg:text-7xl font-bold mb-6 leading-tight">
                 <span class="text-white drop-shadow-2xl" style="text-shadow: 3px 3px 6px rgba(0,0,0,0.8);">ESG Sustainability</span> <br/>
-                <span class="bg-gradient-to-r from-[#0060A6] to-[#14B273] bg-clip-text text-transparent font-extrabold" style="text-shadow: 2px 2px 4px rgba(0,0,0,0.5); -webkit-text-stroke: 1px rgba(255,255,255,0.3);">Reporting Services</span>
+                <span class="bg-gradient-to-r from-cyan-400 via-teal-300 to-green-400 bg-clip-text text-transparent font-extrabold" style="text-shadow: 2px 2px 4px rgba(0,0,0,0.5); -webkit-text-stroke: 1px rgba(255,255,255,0.3);">Reporting Services</span>
             </h1>
             
             <p class="text-xl lg:text-2xl leading-relaxed max-w-3xl mx-auto mb-8 text-white font-medium" style="text-shadow: 2px 2px 4px rgba(0,0,0,0.7);">
@@ -327,16 +331,17 @@
             </p>
             
             <div class="flex flex-col sm:flex-row gap-4 justify-center max-w-lg mx-auto">
-                <a href="#services-overview" class="bg-gradient-to-r from-[#0060A6] to-[#14B273] text-white font-bold py-4 px-8 rounded-xl transition-all transform hover:scale-105 shadow-2xl hover:shadow-[#0060A6]/25" style="text-shadow: 1px 1px 2px rgba(0,0,0,0.5);">
+                <a href="#services-overview" class="bg-gradient-to-r from-cyan-500 to-teal-500 text-white font-bold py-4 px-8 rounded-xl transition-all transform hover:scale-105 shadow-2xl hover:shadow-cyan-500/25" style="text-shadow: 1px 1px 2px rgba(0,0,0,0.5);">
                     Explore Our Services
                 </a>
-                <a href="/form" class="border-2 border-[#F2F4F6] bg-[#1D1F23]/10 backdrop-blur-sm text-white font-bold py-4 px-8 rounded-xl transition-all transform hover:scale-105 hover:bg-[#F2F4F6] hover:text-[#1D1F23] shadow-2xl" style="text-shadow: 1px 1px 2px rgba(0,0,0,0.5);">
+                <a href="/form" class="border-2 border-white bg-white/10 backdrop-blur-sm text-white font-bold py-4 px-8 rounded-xl transition-all transform hover:scale-105 hover:bg-white hover:text-gray-800 shadow-2xl" style="text-shadow: 1px 1px 2px rgba(0,0,0,0.5);">
                     Get Started
                 </a>
             </div>
         </div>
     </div>
 </section>
+
 
 
     <!-- Key Features Section -->
@@ -663,5 +668,6 @@
 </body>
 
 </html>
+
 
 
