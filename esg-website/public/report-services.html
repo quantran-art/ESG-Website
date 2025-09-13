@@ -307,40 +307,68 @@
         </div>
     </nav>
 
-<section class="relative text-white py-20 min-h-[600px] flex items-center">
-    <!-- Hình nền sử dụng thẻ img thay vì CSS background -->
-    <img src="/public/images/bgr_images.jpg" alt="ESG Sustainability Background" class="absolute inset-0 w-full h-full object-cover z-0" />
-    
-    <!-- Dark overlay for better text readability -->
-    <div class="absolute inset-0 bg-black bg-opacity-60 z-10"></div>
-    
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-20">
-        <div class="text-center animate-fadeInUp">
-            <div class="inline-flex items-center px-4 py-2 bg-white/20 rounded-full border border-white/30 backdrop-blur-sm mb-6">
-                <span class="w-2 h-2 bg-green-400 rounded-full mr-2 animate-pulse"></span>
-                <span class="text-sm font-medium text-white drop-shadow-lg">Expert-Led ESG Reporting</span>
-            </div>
-            
-            <h1 class="text-5xl lg:text-7xl font-bold mb-6 leading-tight">
-                <span class="text-white drop-shadow-2xl" style="text-shadow: 3px 3px 6px rgba(0,0,0,0.8);">ESG Sustainability</span> <br/>
-                <span class="bg-gradient-to-r from-cyan-400 via-teal-300 to-green-400 bg-clip-text text-transparent font-extrabold" style="text-shadow: 2px 2px 4px rgba(0,0,0,0.5); -webkit-text-stroke: 1px rgba(255,255,255,0.3);">Reporting Services</span>
-            </h1>
-            
-            <p class="text-xl lg:text-2xl leading-relaxed max-w-3xl mx-auto mb-8 text-white font-medium" style="text-shadow: 2px 2px 4px rgba(0,0,0,0.7);">
-                Transform your sustainability data into compelling, credible reports that drive stakeholder confidence and regulatory compliance. Our expert-led approach ensures every report tells your authentic sustainability story.
-            </p>
-            
-            <div class="flex flex-col sm:flex-row gap-4 justify-center max-w-lg mx-auto">
-                <a href="#services-overview" class="bg-gradient-to-r from-cyan-500 to-teal-500 text-white font-bold py-4 px-8 rounded-xl transition-all transform hover:scale-105 shadow-2xl hover:shadow-cyan-500/25" style="text-shadow: 1px 1px 2px rgba(0,0,0,0.5);">
-                    Explore Our Services
-                </a>
-                <a href="/form" class="border-2 border-white bg-white/10 backdrop-blur-sm text-white font-bold py-4 px-8 rounded-xl transition-all transform hover:scale-105 hover:bg-white hover:text-gray-800 shadow-2xl" style="text-shadow: 1px 1px 2px rgba(0,0,0,0.5);">
-                    Get Started
-                </a>
-            </div>
-        </div>
+
+<section 
+  class="relative flex items-center min-h-[600px] py-20 text-white bg-center bg-cover bg-no-repeat" 
+  style="background-image: url('/public/images/bgr_images.jpg');"
+>
+  <!-- Overlay -->
+  <div class="absolute inset-0 bg-black/60 z-10"></div>
+
+  <!-- Content -->
+  <div class="relative z-20 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="text-center animate-fadeInUp">
+      
+      <!-- Badge -->
+      <div class="inline-flex items-center px-4 py-2 mb-6 bg-white/20 rounded-full border border-white/30 backdrop-blur-sm">
+        <span class="w-2 h-2 mr-2 bg-green-400 rounded-full animate-pulse"></span>
+        <span class="text-sm font-medium drop-shadow-lg">Expert-Led ESG Reporting</span>
+      </div>
+
+      <!-- Heading -->
+      <h1 class="mb-6 text-5xl font-bold leading-tight lg:text-7xl">
+        <span class="drop-shadow-2xl [text-shadow:3px_3px_6px_rgba(0,0,0,0.8)]">
+          ESG Sustainability
+        </span>
+        <br />
+        <span class="bg-gradient-to-r from-cyan-400 via-teal-300 to-green-400 bg-clip-text text-transparent font-extrabold 
+                     [text-shadow:2px_2px_4px_rgba(0,0,0,0.5)] 
+                     [-webkit-text-stroke:1px_rgba(255,255,255,0.3)]">
+          Reporting Services
+        </span>
+      </h1>
+
+      <!-- Description -->
+      <p class="max-w-3xl mx-auto mb-8 text-xl font-medium leading-relaxed lg:text-2xl drop-shadow-lg 
+                 [text-shadow:2px_2px_4px_rgba(0,0,0,0.7)]">
+        Transform your sustainability data into compelling, credible reports that drive stakeholder confidence 
+        and regulatory compliance. Our expert-led approach ensures every report tells your authentic 
+        sustainability story.
+      </p>
+
+      <!-- Buttons -->
+      <div class="flex flex-col justify-center max-w-lg gap-4 mx-auto sm:flex-row">
+        <a 
+          href="#services-overview" 
+          class="px-8 py-4 font-bold text-white transition-transform transform rounded-xl shadow-2xl 
+                 bg-gradient-to-r from-cyan-500 to-teal-500 hover:scale-105 hover:shadow-cyan-500/25 
+                 [text-shadow:1px_1px_2px_rgba(0,0,0,0.5)]"
+        >
+          Explore Our Services
+        </a>
+        <a 
+          href="/form" 
+          class="px-8 py-4 font-bold text-white transition-transform transform bg-white/10 border-2 border-white 
+                 rounded-xl shadow-2xl backdrop-blur-sm hover:scale-105 hover:bg-white hover:text-gray-800 
+                 [text-shadow:1px_1px_2px_rgba(0,0,0,0.5)]"
+        >
+          Get Started
+        </a>
+      </div>
     </div>
+  </div>
 </section>
+
 
 
 
@@ -668,6 +696,7 @@
 </body>
 
 </html>
+
 
 
 
